@@ -1,0 +1,11 @@
+
+
+.testimonial-banner{
+    background: linear-gradient(#000, rgba(0, 0, 0, 0.322)), url("https://images.ctfassets.net/ma6hw2fxp8jo/6CDIUVR4fsPxjMYfsWYMGZ/6458bc9644451b64c1f43a948ae42fac/hybrid_feature.png?w=2880&h=1620&q=90&fm=webp") center fixed;
+    background-size: cover;
+}
+
+.masthead-bg{
+  background: linear-gradient(#fff, #fff, rgba(252, 252, 252, 0.795)), url("https://www.whitecloak.com/images/4zAg.gif") center;
+  background-size: cover;
+}
