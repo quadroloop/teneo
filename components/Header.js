@@ -6,7 +6,17 @@ const Header = () => {
     >
       <div className="container px-5">
         <a className="navbar-brand fw-bold" href="#page-top">
-          Teneo
+          <img
+            src="/assets/img/teneo-logo.jpeg"
+            className="teneo-logo"
+            alt="teneo-logo"
+          />
+          {/* <img
+            src="https://avatars.dicebear.com/api/jdenticon/teneo-logo.svg"
+            className="teneo-logo"
+            alt="teneo-logo"
+          />
+          <span>Teneo</span> */}
         </a>
         <button
           className="navbar-toggler"
@@ -24,25 +34,26 @@ const Header = () => {
           <ul className="navbar-nav ms-auto me-4 my-3 my-lg-0">
             <li className="nav-item">
               <a className="nav-link me-lg-3" href="#features">
-                Features
+                News
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link me-lg-3" href="#download">
-                Download
+                Articles
               </a>
             </li>
           </ul>
-          <button
-            className="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0"
-            data-bs-toggle="modal"
-            data-bs-target="#feedbackModal"
-          >
+          <button className="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0">
             <span className="d-flex align-items-center">
               <i className="bi-chat-text-fill me-2" />
-              <span className="small">Send Feedback</span>
+              <span className="small">Connect via Metamask</span>
             </span>
           </button>
+
+          <img
+            src="https://avatars.dicebear.com/api/jdenticon/brycenarcisocenizamercines.svg"
+            className="avatar"
+          />
         </div>
       </div>
     </nav>

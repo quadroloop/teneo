@@ -4,97 +4,81 @@ const Masthead = () => {
       <header className="masthead masthead-bg">
         <div className="container px-5">
           <div className="row gx-5 align-items-center">
-            <div className="col-lg-6">
-              <div className="mb-5 mb-lg-0 text-center text-lg-start">
-                <h1 className="display-1 lh-1 mb-3">
-                  The truth in the palm on your hands
-                </h1>
-                <p className="lead fw-normal text-muted mb-5">
-                  Open News and Data Platform built on top of Web3 and RSS3
-                </p>
-                <div className="d-flex flex-column flex-lg-row align-items-center">
-                  <a className="me-lg-3 mb-4 mb-lg-0" href="#!">
-                    <img
-                      className="app-badge"
-                      src="assets/img/google-play-badge.svg"
-                    />
-                  </a>
-                  <a href="#!">
-                    <img
-                      className="app-badge"
-                      src="assets/img/app-store-badge.svg"
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-6">
-              <div className="masthead-device-mockup">
-                <svg
-                  className="circle"
-                  viewBox="0 0 100 100"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <defs>
-                    <linearGradient
-                      id="circleGradient"
-                      gradientTransform="rotate(45)"
-                    >
-                      <stop className="gradient-start-color" offset="0%" />
-                      <stop className="gradient-end-color" offset="100%" />
-                    </linearGradient>
-                  </defs>
-                  <circle cx={50} cy={50} r={50} />
-                </svg>
-                <svg
-                  className="shape-1 d-none d-sm-block"
-                  viewBox="0 0 240.83 240.83"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    x="-32.54"
-                    y="78.39"
-                    width="305.92"
-                    height="84.05"
-                    rx="42.03"
-                    transform="translate(120.42 -49.88) rotate(45)"
+            <div className="mb-5 mb-lg-0 text-center text-lg-start">
+              <h2 className="display-6 lh-1 mb-3">Top Stories</h2>
+              <p className="fw-normal text-muted mb-5">
+                Open News and Data Platform built on top of Web3 and RSS3
+              </p>
+              <div className="main-cards">
+                <div className="main-card">
+                  <img
+                    src="https://images.pexels.com/photos/41162/moon-landing-apollo-11-nasa-buzz-aldrin-41162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    className="item-image"
                   />
-                  <rect
-                    x="-32.54"
-                    y="78.39"
-                    width="305.92"
-                    height="84.05"
-                    rx="42.03"
-                    transform="translate(-49.88 120.42) rotate(-45)"
-                  />
-                </svg>
-                <svg
-                  className="shape-2 d-none d-sm-block"
-                  viewBox="0 0 100 100"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle cx={50} cy={50} r={50} />
-                </svg>
-                <div className="device-wrapper">
-                  <div
-                    className="device"
-                    data-device="iPhoneX"
-                    data-orientation="portrait"
-                    data-color="black"
-                  >
-                    <div className="screen bg-black">
-                      <video
-                        muted="muted"
-                        autoPlay
-                        loop
-                        style={{ maxWidth: "100%", height: "100%" }}
-                      >
-                        <source
-                          src="assets/video/app-video.mov"
-                          type="video/mp4"
-                        />
-                      </video>
+                  <div className="news-info">
+                    <span className="news-header-text">
+                      An age of new Space exploration
+                    </span>
+                    <small>
+                      This is an text some text boi this is some lorem isum
+                      stuff
+                    </small>
+
+                    <div className="badges">
+                      <small>
+                        <i className="bi-eye text-info" /> 1,234
+                      </small>
+                      <small>
+                        <i className="bi-hexagon text-info" /> 3
+                      </small>
                     </div>
+                  </div>
+                </div>
+
+                <div className="main-card">
+                  <img
+                    src="https://images.pexels.com/photos/2694037/pexels-photo-2694037.jpeg"
+                    className="item-image"
+                  />
+                  <div className="news-info">
+                    <span className="news-header-text">
+                      An age of new Space exploration
+                    </span>
+                    <small>
+                      This is an text some text boi this is some lorem isum
+                      stuff
+                    </small>
+
+                    <div className="badges">
+                      <small>
+                        <i className="bi-eye text-info" /> 1,234
+                      </small>
+                      <small>
+                        <i className="bi-hexagon text-info" /> 3
+                      </small>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="main-card">
+                  <img
+                    src="https://images.pexels.com/photos/264146/pexels-photo-264146.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    className="item-image"
+                  />
+                  <div className="news-info">
+                    <span>An age of new Space exploration</span>
+                    <small>This is an text some text boi</small>
+                  </div>
+                </div>
+
+                <div className="main-card">
+                  <img
+                    src="https://images.pexels.com/photos/11834957/pexels-photo-11834957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    className="item-image"
+                  />
+                  <div className="news-info">
+                    <span>An age of new Space exploration</span>
+                    <small>This is an text some text boi</small>
                   </div>
                 </div>
               </div>
