@@ -3,7 +3,7 @@
   width: 100%;
   padding: 0px 50px;
   justify-content: space-between;
-  column-gap: 30px;
+  column-gap: 40px;
 
   .feed-infos {
     position: sticky;
@@ -25,6 +25,7 @@
       overflow: hidden;
       border: 1px solid #ddd;
       border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
       img {
         $size: 170px;
@@ -45,6 +46,21 @@
 
           &.title {
             font-size: 25px;
+          }
+        }
+
+        .feed-stats {
+          margin-top: 15px;
+          display: flex;
+          column-gap: 30px;
+          align-items: center;
+
+          .eth-user {
+            img {
+              $size: 25px;
+              height: $size;
+              width: $size;
+            }
           }
         }
       }

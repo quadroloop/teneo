@@ -11,6 +11,26 @@ const FeedCard = () => {
           very good. This is the oldest company. But this is not cool this is
           very nice and cool.
         </span>
+        <div className="feed-stats">
+          <div className="eth-user">
+            <img
+              src="https://avatars.dicebear.com/api/jdenticon/brycenarcisocenizamercines.svg"
+              className="avatar"
+            />
+            <span>vitalik.eth</span>
+          </div>
+          <small className="badge bg-dark badge-info">Donation</small>
+          <div className="eth-user">
+            <img
+              src="https://avatars.dicebear.com/api/jdenticon/brycenarcisocenizamercines.svg"
+              className="avatar"
+            />
+            <span>0x02304AE</span>
+          </div>
+          <small>
+            <i className="bi-circle-fill text-primary" /> December 20, 2022
+          </small>
+        </div>
       </div>
     </div>
   );

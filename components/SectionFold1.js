@@ -5,7 +5,7 @@ const SectionFold1 = () => {
         <div className="row gx-5 align-items-center justify-content-center justify-content-lg-between">
           <div className="col-12 col-lg-5">
             <h2 className="display-4 lh-1 mb-4">
-              Designed with Simplicity in mind.
+              Facilitating the free flow of Information.
             </h2>
             <p className="lead fw-normal text-muted mb-5 mb-lg-0">
               RSS3 is a decentralized is the new way of sharing information in
