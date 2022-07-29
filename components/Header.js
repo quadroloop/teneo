@@ -11,12 +11,6 @@ const Header = () => {
             className="teneo-logo"
             alt="teneo-logo"
           />
-          {/* <img
-            src="https://avatars.dicebear.com/api/jdenticon/teneo-logo.svg"
-            className="teneo-logo"
-            alt="teneo-logo"
-          />
-          <span>Teneo</span> */}
         </a>
         <button
           className="navbar-toggler"
@@ -33,13 +27,13 @@ const Header = () => {
         <div className="collapse navbar-collapse" id="navbarResponsive">
           <ul className="navbar-nav ms-auto me-4 my-3 my-lg-0">
             <li className="nav-item">
-              <a className="nav-link me-lg-3" href="#features">
-                News
+              <a className="nav-link me-lg-3" href="#top-stories">
+                Top Stories
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link me-lg-3" href="#download">
-                Articles
+              <a className="nav-link me-lg-3" href="#feed">
+                Main Feed
               </a>
             </li>
           </ul>

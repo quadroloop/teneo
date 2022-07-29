@@ -1,14 +1,23 @@
+import CTAButton from "./CTAButton";
+
 const Masthead = () => {
   return (
     <>
-      <header className="masthead masthead-bg">
+      <header className="masthead masthead-bg" id="top-stories">
         <div className="container px-5">
           <div className="row gx-5 align-items-center">
             <div className="mb-5 mb-lg-0 text-center text-lg-start">
-              <h2 className="display-6 lh-1 mb-3">Top Stories</h2>
-              <p className="fw-normal text-muted mb-5">
-                Open News and Data Platform built on top of Web3 and RSS3
-              </p>
+              <div className="mast-header">
+                <div className="header-info">
+                  <h2 className="display-6 lh-1 mb-3">Top Stories</h2>
+                  <p className="fw-normal text-muted mb-5">
+                    Open News and Data Platform built on top of Web3 and RSS3
+                  </p>
+                </div>
+                <a href="#feed">
+                  <CTAButton>View More</CTAButton>
+                </a>
+              </div>
               <div className="main-cards">
                 <div className="main-card">
                   <img
@@ -29,7 +38,7 @@ const Masthead = () => {
                         <i className="bi-eye text-info" /> 1,234
                       </small>
                       <small>
-                        <i className="bi-hexagon text-info" /> 3
+                        <i className="bi-hexagon text-info" /> 42
                       </small>
                     </div>
                   </div>
@@ -46,7 +55,7 @@ const Masthead = () => {
                     </span>
                     <small>
                       This is an text some text boi this is some lorem isum
-                      stuff
+                      stuff this is cool..
                     </small>
 
                     <div className="badges">
@@ -54,7 +63,7 @@ const Masthead = () => {
                         <i className="bi-eye text-info" /> 1,234
                       </small>
                       <small>
-                        <i className="bi-hexagon text-info" /> 3
+                        <i className="bi-hexagon text-info" /> 301
                       </small>
                     </div>
                   </div>
