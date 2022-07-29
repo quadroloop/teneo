@@ -1,12 +1,19 @@
+import FeedCard from "./FeedCard";
+import Fade from "react-reveal/Fade";
+
 const MainFeed = () => {
   return (
     <>
       <section id="feed">
         <div className="main-feed container">
           <div className="feed-items">
-            <div className="card">
-              <h1>hello</h1>
-            </div>
+            {[...Array(100).keys()].map(() => {
+              return (
+                <Fade bottom>
+                  <FeedCard />
+                </Fade>
+              );
+            })}
           </div>
 
           <div className="feed-infos">

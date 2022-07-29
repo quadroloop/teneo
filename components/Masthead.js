@@ -11,7 +11,7 @@ const Masthead = () => {
                 <div className="header-info">
                   <h2 className="display-6 lh-1 mb-3">Top Stories</h2>
                   <p className="fw-normal text-muted mb-5">
-                    Open News and Data Platform built on top of Web3 and RSS3
+                    Most popular stories curated just for you.
                   </p>
                 </div>
                 <a href="#feed">

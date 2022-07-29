@@ -1,6 +1,12 @@
 #mainNav {
   background: #fff;
   backdrop-filter: blur(3px);
+
+  .container {
+    display: flex;
+    align-items: center;
+    height: 40px;
+  }
 }
 
 .masthead-bg {
@@ -9,6 +15,7 @@
       center;
   background-size: cover;
   height: auto;
+  padding-top: 9em;
 }
 
 .avatar {
@@ -23,6 +30,8 @@
 }
 
 .logo {
+  position: relative;
+  top: -4px;
   .dot {
     $size: 10px;
     height: $size;

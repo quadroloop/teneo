@@ -16,5 +16,38 @@
 
   .feed-items {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    .feed-card {
+      display: flex;
+      overflow: hidden;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+
+      img {
+        $size: 170px;
+        height: $size;
+        width: $size;
+        flex-shrink: 0;
+        object-fit: cover;
+        border-right: 0.3px solid #ddd;
+      }
+
+      .article-info {
+        padding: 20px 20px;
+        display: flex;
+        flex-direction: column;
+
+        span {
+          font-size: 17px;
+
+          &.title {
+            font-size: 25px;
+          }
+        }
+      }
+    }
   }
 }
