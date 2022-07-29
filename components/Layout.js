@@ -22,7 +22,10 @@ const Layout = (props) => {
           href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&display=swap"
           rel="stylesheet"
         />
-        <link href="/css/styles.css" rel="stylesheet" />
+        <link
+          href="https://seofeo-wc-casestudy.vercel.app/css/styles.css"
+          rel="stylesheet"
+        />
       </Head>
       {props.children}
     </>

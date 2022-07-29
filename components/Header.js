@@ -1,3 +1,5 @@
+import Logo from "./Logo";
+
 const Header = () => {
   return (
     <nav
@@ -5,13 +7,7 @@ const Header = () => {
       id="mainNav"
     >
       <div className="container px-5">
-        <a className="navbar-brand fw-bold" href="#page-top">
-          <img
-            src="/assets/img/teneo-logo.jpeg"
-            className="teneo-logo"
-            alt="teneo-logo"
-          />
-        </a>
+        <Logo />
         <button
           className="navbar-toggler"
           type="button"
