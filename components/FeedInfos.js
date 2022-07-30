@@ -1,4 +1,9 @@
+import { fetchTopSearches } from "../data/TeneoDataRepo";
+
 const FeedInfos = () => {
+  const topSearches = fetchTopSearches();
+
+  console.log(topSearches);
   return (
     <div className="feed-infos">
       <p className="news-header-text headline">

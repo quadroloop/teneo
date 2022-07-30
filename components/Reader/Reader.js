@@ -14,7 +14,7 @@ const Reader = () => {
               selectFeedItem(null);
             }}
           ></div>
-          <div className="reader-page fade-in-min">
+          <div className="reader-page slide-in-right">
             <div className="container">
               <div className="reader-content">
                 <i
