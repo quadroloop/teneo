@@ -1,7 +1,7 @@
 const FeedCard = () => {
   return (
     <div className="feed-card">
-      <img src="https://images.pexels.com/photos/3992945/pexels-photo-3992945.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
+      <img src="https://images.pexels.com/photos/2694037/pexels-photo-2694037.jpeg" />
       <div className="article-info">
         <span className="title news-header-text">
           A new virus in under the radar

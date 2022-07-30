@@ -1,5 +1,6 @@
 import FeedCard from "./FeedCard";
 import Fade from "react-reveal/Fade";
+import FeedInfos from "./FeedInfos";
 
 const MainFeed = () => {
   return (
@@ -7,7 +8,7 @@ const MainFeed = () => {
       <section id="feed">
         <div className="main-feed container">
           <div className="feed-items">
-            {[...Array(4).keys()].map(() => {
+            {[...Array(50).keys()].map(() => {
               return (
                 <Fade bottom>
                   <FeedCard />
@@ -16,9 +17,7 @@ const MainFeed = () => {
             })}
           </div>
 
-          <div className="feed-infos">
-            <p>hello</p>
-          </div>
+          <FeedInfos />
         </div>
       </section>
     </>
