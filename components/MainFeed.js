@@ -7,7 +7,7 @@ const MainFeed = () => {
       <section id="feed">
         <div className="main-feed container">
           <div className="feed-items">
-            {[...Array(20).keys()].map(() => {
+            {[...Array(4).keys()].map(() => {
               return (
                 <Fade bottom>
                   <FeedCard />

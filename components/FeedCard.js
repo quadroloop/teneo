@@ -4,7 +4,7 @@ const FeedCard = () => {
       <img src="https://images.pexels.com/photos/3992945/pexels-photo-3992945.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
       <div className="article-info">
         <span className="title news-header-text">
-          A new virus in under thre radar
+          A new virus in under the radar
         </span>
         <span>
           This is another thing to think about this lorem ipsum the world is
@@ -14,7 +14,7 @@ const FeedCard = () => {
         <div className="feed-stats">
           <div className="eth-user">
             <img
-              src="https://avatars.dicebear.com/api/jdenticon/brycenarcisocenizamercines.svg"
+              src="https://avatars.dicebear.com/api/jdenticon/brycen.svg"
               className="avatar"
             />
             <span>vitalik.eth</span>
@@ -22,7 +22,7 @@ const FeedCard = () => {
           <small className="badge bg-dark badge-info">Donation</small>
           <div className="eth-user">
             <img
-              src="https://avatars.dicebear.com/api/jdenticon/brycenarcisocenizamercines.svg"
+              src="https://avatars.dicebear.com/api/jdenticon/brycena.svg"
               className="avatar"
             />
             <span>0x02304AE</span>

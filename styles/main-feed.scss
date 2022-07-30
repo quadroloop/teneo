@@ -26,9 +26,11 @@
       border: 1px solid #ddd;
       border-radius: 10px;
       box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+      transition: 0.3s;
+      cursor: pointer;
 
       img {
-        $size: 170px;
+        $size: 166px;
         height: $size;
         width: $size;
         flex-shrink: 0;
@@ -45,14 +47,14 @@
           font-size: 17px;
 
           &.title {
-            font-size: 25px;
+            font-size: 22px;
           }
         }
 
         .feed-stats {
           margin-top: 15px;
           display: flex;
-          column-gap: 30px;
+          column-gap: 10px;
           align-items: center;
 
           .eth-user {
@@ -63,6 +65,12 @@
             }
           }
         }
+      }
+
+      &:hover {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+          rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        transition: 0.3s;
       }
     }
   }

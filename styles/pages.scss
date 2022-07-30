@@ -65,6 +65,7 @@
     position: relative;
     overflow: hidden;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: 0.3s;
 
     .item-image {
       width: 100%;
@@ -104,6 +105,11 @@
         margin-left: auto;
       }
     }
+
+    &:hover {
+      box-shadow: rgba(113, 105, 179, 0.712) 0px 4px 12px;
+      transition: 0.3s;
+    }
   }
 }
 
@@ -123,4 +129,15 @@
   .rss3-logo {
     width: 120px;
   }
+}
+
+.search-bar {
+  background: rgba(221, 221, 221, 0.356);
+  border: 2px solid rgb(161, 161, 161);
+  color: #333;
+  width: 100%;
+  max-width: 370px;
+  padding: 5px 15px;
+  border-radius: 20px;
+  margin-left: 10px;
 }

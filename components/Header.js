@@ -8,6 +8,12 @@ const Header = () => {
     >
       <div className="container px-5">
         <Logo />
+
+        <input
+          className="search-bar"
+          type="text"
+          placeholder="Search Address / ENS Address"
+        ></input>
         <button
           className="navbar-toggler"
           type="button"
