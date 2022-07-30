@@ -11,15 +11,15 @@ const Layout = (props) => {
         />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600"
           rel="stylesheet"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700"
           rel="stylesheet"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400"
           rel="stylesheet"
         />
         <link
