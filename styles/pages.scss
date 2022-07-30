@@ -141,3 +141,13 @@
   border-radius: 20px;
   margin-left: 10px;
 }
+
+.section-fold {
+  background: linear-gradient(
+      rgba(242, 244, 245, 0.87),
+      rgb(237, 241, 241),
+      #fff
+    ),
+    url("https://images.pexels.com/photos/2988358/pexels-photo-2988358.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
+}

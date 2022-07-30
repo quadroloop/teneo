@@ -1,6 +1,6 @@
 const SectionFold1 = () => {
   return (
-    <section className="bg-light">
+    <section className="section-fold">
       <div className="container px-5">
         <div className="row gx-5 align-items-center justify-content-center justify-content-lg-between">
           <div className="col-12 col-lg-5">
