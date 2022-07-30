@@ -5,16 +5,23 @@ import FeedMetrics from "../components/FeedMetrics";
 import MainFeed from "../components/MainFeed";
 import SectionFold1 from "../components/SectionFold1";
 import Layout from "../components/Layout";
+import Reader from "../components/Reader/Reader";
+import AppContextProvider from "../components/AppContext";
 
 export default function Home() {
   return (
-    <Layout>
-      <Header />
-      <Masthead />
-      <FeedMetrics />
-      <MainFeed />
-      <SectionFold1 />
-      <Footer />
-    </Layout>
+    <>
+      <AppContextProvider>
+        <Reader />
+        <Layout>
+          <Header />
+          <Masthead />
+          <FeedMetrics />
+          <MainFeed />
+          <SectionFold1 />
+          <Footer />
+        </Layout>
+      </AppContextProvider>
+    </>
   );
 }
