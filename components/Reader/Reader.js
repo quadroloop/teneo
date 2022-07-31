@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { SelectFeedContext } from "../AppContext";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import moment from "moment";
 
 const Reader = () => {
   const { selectedFeedItem, selectFeedItem } = useContext(SelectFeedContext);
@@ -33,22 +34,19 @@ const Reader = () => {
                 <div className="reader-stats">
                   <span>
                     <img
-                      src={`https://avatars.dicebear.com/api/jdenticon/${data.authors[0]}.svg`}
+                      src={`https://avatars.dicebear.com/api/jdenticon/${data.author}.svg`}
                       className="avatar"
                     />{" "}
-                    bryce.eth
+                    {data.author.substring(0, 10)}
                   </span>
 
                   <span>
                     <i className="bi-hexagon-fill text-primary" />{" "}
                     {data.tags[0]}
                   </span>
-                </div>
-
-                <div className="reader-stats">
                   <span>
-                    <i className="bi-circle-fill text-primary" /> December 20,
-                    2021
+                    <i className="bi-circle-fill text-primary" />{" "}
+                    {moment(data.date_created).format("MMMM D, YYYY")}
                   </span>
 
                   <span>

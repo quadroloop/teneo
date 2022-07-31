@@ -7,7 +7,7 @@ const FeedInfos = () => {
   return (
     <div className="feed-infos">
       <p className="news-header-text headline">
-        <i className="bi-circle-fill text-info" /> Trending
+        <i className="bi-circle-fill text-info" /> Popular Feeds
       </p>
       <div className="media-grid">
         <div className="media-item">

@@ -23,7 +23,11 @@ const FeedMetrics = () => {
         </div>
         <div className="metrics-card">
           <span className="number news-header-text">
-            {feedData && feedData.filter((x) => x.tags.includes("NFT")).length}
+            {feedData &&
+              abbreviate(
+                feedData.filter((x) => x.tags.includes("NFT")).length,
+                2
+              )}
           </span>
           <i className="bi-soundwave text-info" />
           <span className="name">NFTs</span>
