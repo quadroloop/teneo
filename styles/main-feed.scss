@@ -25,6 +25,7 @@
     .feed-card {
       display: flex;
       overflow: hidden;
+      position: relative;
       border: 1px solid #ddd;
       border-radius: 10px;
       box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -176,5 +177,37 @@
         font-weight: 700;
       }
     }
+  }
+}
+
+.feed-card-skeleton {
+  background: rgb(241, 245, 247);
+
+  &:nth-child(even) {
+    -webkit-animation: blink-1 2.5s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+      infinite both;
+    animation: blink-1 2.5s cubic-bezier(0.55, 0.055, 0.675, 0.19) infinite both;
+  }
+
+  &:nth-child(odd) {
+    -webkit-animation: blink-1 3.5s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+      infinite both;
+    animation: blink-1 3.5s cubic-bezier(0.55, 0.055, 0.675, 0.19) infinite both;
+  }
+}
+
+.no-results {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  i,
+  h1 {
+    text-align: left;
+  }
+
+  i {
+    font-size: 20px;
   }
 }

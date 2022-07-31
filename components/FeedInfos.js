@@ -3,7 +3,6 @@ import { fetchTopSearches } from "../data/TeneoDataRepo";
 const FeedInfos = () => {
   const topSearches = fetchTopSearches();
 
-  console.log(topSearches);
   return (
     <div className="feed-infos">
       <p className="news-header-text headline">
@@ -39,89 +38,25 @@ const FeedInfos = () => {
       </div>
 
       <div className="top-searches">
-        <div className="searched-item">
-          <img
-            src="https://images.pexels.com/photos/41162/moon-landing-apollo-11-nasa-buzz-aldrin-41162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-            className="avatar"
-          />
+        {topSearches
+          .sort((a, b) => b.count - a.count)
+          .map((search) => {
+            return (
+              <div className="searched-item">
+                <img
+                  src={`https://avatars.dicebear.com/api/jdenticon/${search.query}.svg`}
+                  className="avatar"
+                />
 
-          <div className="search-info">
-            <span>Vitalik.eth</span>
-            <small>
-              <i className="bi-search"></i> 123 searches
-            </small>
-          </div>
-        </div>
-
-        <div className="searched-item">
-          <img
-            src="https://images.pexels.com/photos/41162/moon-landing-apollo-11-nasa-buzz-aldrin-41162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-            className="avatar"
-          />
-
-          <div className="search-info">
-            <span>0xbf08ec81a63f33f50e7d23ba06ccf2e80c4891f3</span>
-            <small>
-              <i className="bi-search"></i> 123 searches
-            </small>
-          </div>
-        </div>
-
-        <div className="searched-item">
-          <img
-            src="https://images.pexels.com/photos/41162/moon-landing-apollo-11-nasa-buzz-aldrin-41162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-            className="avatar"
-          />
-
-          <div className="search-info">
-            <span>0xbf08ec81a63f33f50e7d23ba06ccf2e80c4891f3</span>
-            <small>
-              <i className="bi-search"></i> 123 searches
-            </small>
-          </div>
-        </div>
-
-        <div className="searched-item">
-          <img
-            src="https://images.pexels.com/photos/41162/moon-landing-apollo-11-nasa-buzz-aldrin-41162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-            className="avatar"
-          />
-
-          <div className="search-info">
-            <span>0xbf08ec81a63f33f50e7d23ba06ccf2e80c4891f3</span>
-            <small>
-              <i className="bi-search"></i> 123 searches
-            </small>
-          </div>
-        </div>
-
-        <div className="searched-item">
-          <img
-            src="https://images.pexels.com/photos/41162/moon-landing-apollo-11-nasa-buzz-aldrin-41162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-            className="avatar"
-          />
-
-          <div className="search-info">
-            <span>0xbf08ec81a63f33f50e7d23ba06ccf2e80c4891f3</span>
-            <small>
-              <i className="bi-search"></i> 123 searches
-            </small>
-          </div>
-        </div>
-
-        <div className="searched-item">
-          <img
-            src="https://images.pexels.com/photos/41162/moon-landing-apollo-11-nasa-buzz-aldrin-41162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-            className="avatar"
-          />
-
-          <div className="search-info">
-            <span>0xbf08ec81a63f33f50e7d23ba06ccf2e80c4891f3</span>
-            <small>
-              <i className="bi-search"></i> 123 searches
-            </small>
-          </div>
-        </div>
+                <div className="search-info">
+                  <span>{search.query}</span>
+                  <small>
+                    <i className="bi-search"></i> {search.count} searches
+                  </small>
+                </div>
+              </div>
+            );
+          })}
       </div>
     </div>
   );

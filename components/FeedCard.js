@@ -58,6 +58,17 @@ const FeedCard = (props) => {
     };
   }
 
+  if (tags[0] === "NFT" && !title) {
+    title = `${metadata.network} NFT #${metadata.token_id}`;
+    summary = `${metadata.network} NFT (${metadata.token_standard}), token ID: ${metadata.token_id}.`;
+    previewImage.address = `https://avatars.dicebear.com/api/jdenticon/${metadata.network}-${metadata.token_id}.svg`;
+
+    propOverides = {
+      title: title,
+      summary: summary,
+    };
+  }
+
   const processedItemData = {
     ...props.data,
     previewImage: previewImage,

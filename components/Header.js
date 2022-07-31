@@ -1,6 +1,50 @@
+import { useContext } from "react";
+import { FeedDataContext } from "./AppContext";
 import Logo from "./Logo";
+import axios from "axios";
+import { db } from "../firebase/firebaseClient";
+import { fetchTopSearches } from "../data/TeneoDataRepo";
+import { increment } from "firebase/firestore";
 
 const Header = () => {
+  const { setFeedData } = useContext(FeedDataContext);
+  const topSearches = fetchTopSearches();
+
+  const searchRSS3 = async (query) => {
+    if (query.trim() !== "") {
+      setFeedData(null);
+
+      axios
+        .get(
+          `https://pregod.rss3.dev/v0.4.0/account:${query}@ethereum/notes?limit=1000&exclude_tags=POAP&latest=false`
+        )
+        .then(async (res) => {
+          setFeedData(res.data.list);
+
+          if (res.data.list.length > 0) {
+            let searchInstance = topSearches.find((x) => x.query === query);
+            // save to top searches
+            if (!searchInstance) {
+              await db.collection("top-searches").doc(query).set({
+                query: query,
+                count: 1,
+              });
+            } else {
+              await db
+                .collection("top-searches")
+                .doc(query)
+                .update({
+                  count: searchInstance.count + 1,
+                });
+            }
+          }
+        })
+        .catch(() => {
+          setFeedData([]);
+        });
+    }
+  };
+
   return (
     <nav
       className="navbar navbar-expand-lg navbar-light fixed-top shadow-sm"
@@ -13,6 +57,11 @@ const Header = () => {
           className="search-bar"
           type="text"
           placeholder="Search Address / ENS Address"
+          onKeyUp={(e) => {
+            if (e.key === "Enter") {
+              searchRSS3(e.target.value);
+            }
+          }}
         ></input>
         <button
           className="navbar-toggler"
