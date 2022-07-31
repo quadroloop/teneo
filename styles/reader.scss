@@ -48,6 +48,9 @@
     object-fit: cover;
     object-position: center;
     border-radius: 10px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+      rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    background: #000;
   }
 }
 
@@ -55,4 +58,14 @@
   display: flex;
   column-gap: 20px;
   align-items: center;
+}
+
+.reader-summary {
+  p {
+    font-size: 18px;
+  }
+
+  a {
+    color: rgb(101, 101, 235);
+  }
 }

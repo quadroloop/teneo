@@ -29,6 +29,7 @@
         flex-shrink: 0;
         object-fit: cover;
         border-right: 0.3px solid #ddd;
+        background: #000;
       }
 
       .article-info {
@@ -42,6 +43,10 @@
           &.title {
             font-size: 22px;
           }
+        }
+
+        .summary-text {
+          max-width: 500px;
         }
 
         .feed-stats {

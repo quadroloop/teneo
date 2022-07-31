@@ -1,8 +1,12 @@
 import { useContext } from "react";
 import { SelectFeedContext } from "../AppContext";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const Reader = () => {
   const { selectedFeedItem, selectFeedItem } = useContext(SelectFeedContext);
+
+  let data = selectedFeedItem;
 
   return (
     <>
@@ -24,19 +28,20 @@ const Reader = () => {
                   }}
                 />
 
-                <h1>This is a new frontier space exporation</h1>
+                <h1>{data.title}</h1>
 
                 <div className="reader-stats">
                   <span>
                     <img
-                      src="https://images.pexels.com/photos/41162/moon-landing-apollo-11-nasa-buzz-aldrin-41162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                      src={`https://avatars.dicebear.com/api/jdenticon/${data.authors[0]}.svg`}
                       className="avatar"
                     />{" "}
                     bryce.eth
                   </span>
 
                   <span>
-                    <i className="bi-check-circle" /> Donation
+                    <i className="bi-hexagon-fill text-primary" />{" "}
+                    {data.tags[0]}
                   </span>
                 </div>
 
@@ -55,38 +60,17 @@ const Reader = () => {
                   </span>
                 </div>
                 <img
-                  src="https://images.pexels.com/photos/41162/moon-landing-apollo-11-nasa-buzz-aldrin-41162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                  src={data.previewImage.address}
                   alt="featured-image"
                   className="featured-image"
                 />
 
-                <p>
-                  t is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that it has a more-or-less
-                  normal distribution of letters, as opposed to using 'Content
-                  here, content here', making it look like readable English.
-                  Many desktop publishing packages and web page editors now use
-                  Lorem Ipsum as their default model text, and a search for
-                  'lorem ipsum' will uncover many web sites still in their
-                  infancy. Various versions have evolved over the years,
-                  sometimes by accident, sometimes on purpose (injected humour
-                  and the like).
-                </p>
-
-                <p>
-                  t is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that it has a more-or-less
-                  normal distribution of letters, as opposed to using 'Content
-                  here, content here', making it look like readable English.
-                  Many desktop publishing packages and web page editors now use
-                  Lorem Ipsum as their default model text, and a search for
-                  'lorem ipsum' will uncover many web sites still in their
-                  infancy. Various versions have evolved over the years,
-                  sometimes by accident, sometimes on purpose (injected humour
-                  and the like).
-                </p>
+                <div className="reader-summary">
+                  <ReactMarkdown
+                    children={data.summary}
+                    remarkPlugins={[remarkGfm]}
+                  />
+                </div>
               </div>
             </div>
           </div>

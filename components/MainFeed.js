@@ -25,10 +25,10 @@ const MainFeed = () => {
         <div className="main-feed container">
           <div className="feed-items">
             {feedData &&
-              feedData.map(() => {
+              feedData.map((item) => {
                 return (
                   <Fade bottom>
-                    <FeedCard />
+                    <FeedCard data={item} />
                   </Fade>
                 );
               })}

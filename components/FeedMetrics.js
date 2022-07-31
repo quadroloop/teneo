@@ -42,7 +42,16 @@ const FeedMetrics = () => {
             {feedData && feedData.filter((x) => x.tags.includes("ETH")).length}
           </span>
           <i className="bi-soundwave text-info" />
-          <span className="name">Others</span>
+          <span className="name">ETH</span>
+        </div>
+
+        <div className="metrics-card">
+          <span className="number news-header-text">
+            {feedData &&
+              feedData.filter((x) => x.tags.includes("Donation")).length}
+          </span>
+          <i className="bi-soundwave text-info" />
+          <span className="name">Donation</span>
         </div>
       </div>
     </aside>
