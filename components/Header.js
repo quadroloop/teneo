@@ -46,10 +46,10 @@ const Header = () => {
             </span>
           </button>
 
-          <img
+          {/* <img
             src="https://avatars.dicebear.com/api/jdenticon/brycenarcisocenizamercines.svg"
             className="avatar"
-          />
+          /> */}
         </div>
       </div>
     </nav>

@@ -1,38 +1,48 @@
+import { useContext } from "react";
+import { FeedDataContext } from "./AppContext";
+import abbreviate from "number-abbreviate";
+
 const FeedMetrics = () => {
+  const { feedData } = useContext(FeedDataContext);
+
   return (
     <aside className="text-center testimonial-banner">
       <span className="metrics-header">
         {" "}
-        <i className="bi-columns-gap mx-2 text-info"></i> Today's Metrics
+        <i className="bi-columns-gap mx-2 text-info"></i> Current Metrics
       </span>
       <br />
       <br />
       <div className="metrics-set container">
         <div className="metrics-card">
-          <span className="number news-header-text">1.2k</span>
+          <span className="number news-header-text">
+            {feedData && abbreviate(feedData.length, 2)}
+          </span>
           <i className="bi-soundwave text-info" />
           <span className="name">All</span>
         </div>
         <div className="metrics-card">
-          <span className="number news-header-text">12</span>
+          <span className="number news-header-text">
+            {feedData && feedData.filter((x) => x.tags.includes("NFT")).length}
+          </span>
           <i className="bi-soundwave text-info" />
           <span className="name">NFTs</span>
         </div>
 
         <div className="metrics-card">
-          <span className="number news-header-text">200</span>
+          <span className="number news-header-text">
+            {feedData &&
+              feedData.filter((x) => x.tags.includes("Token")).length}
+          </span>
           <i className="bi-soundwave text-info" />
           <span className="name">Tokens</span>
         </div>
         <div className="metrics-card">
-          <span className="number news-header-text">101</span>
+          <span className="number news-header-text">
+            {feedData && feedData.filter((x) => x.tags.includes("ETH")).length}
+          </span>
           <i className="bi-soundwave text-info" />
-          <span className="name">Donations</span>
-        </div>
-        <div className="metrics-card">
-          <span className="number news-header-text">3.2k</span>
-          <i className="bi-soundwave text-info" />
-          <span className="name">Posts</span>
+          <span className="name">Others</span>
         </div>
       </div>
     </aside>

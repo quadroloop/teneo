@@ -9,8 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "0.27.2",
     "firebase": "9.9.1",
+    "moment": "2.29.4",
     "next": "12.2.3",
+    "number-abbreviate": "2.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-firebase-hooks": "5.0.3",
