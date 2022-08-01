@@ -11,13 +11,12 @@ const MainFeed = () => {
   const { feedData, setFeedData } = useContext(FeedDataContext);
 
   useEffect(() => {
-    // axios.all(initialFeedURLs).then(
-    //   axios.spread((feed1, feed2) => {
-    //     const initialFeed = [...feed1.data.list, ...feed2.data.list];
-    //     console.log(initialFeed);
-    //     setFeedData(initialFeed);
-    //   })
-    // );
+    axios.all(initialFeedURLs).then(
+      axios.spread((feed1, feed2) => {
+        const initialFeed = [...feed1.data.list, ...feed2.data.list];
+        setFeedData(initialFeed);
+      })
+    );
   }, []);
 
   return (
@@ -26,9 +25,11 @@ const MainFeed = () => {
         <div className="main-feed container">
           <div className="feed-items">
             {feedData &&
-              feedData.map((item) => {
-                return <FeedCard data={item} />;
-              })}
+              feedData
+                .filter((x) => x.tags.includes("NFT"))
+                .map((item) => {
+                  return <FeedCard data={item} />;
+                })}
 
             {feedData === null && <FeedSkeleton />}
 

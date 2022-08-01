@@ -68,7 +68,7 @@ const Header = () => {
           <ul className="navbar-nav ms-auto me-4 my-3 my-lg-0">
             <li className="nav-item">
               <a className="nav-link me-lg-3" href="#top-stories">
-                Top Stories
+                Top Feeds
               </a>
             </li>
             <li className="nav-item">

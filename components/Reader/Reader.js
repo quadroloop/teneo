@@ -19,12 +19,14 @@ const Reader = () => {
         .doc(data.identifier.replace("//", ""))
         .set({ ...data, votes: 1, views: 1 });
       setUpVote(true);
+    } else {
+      await db
+        .collection("top-feeds")
+        .doc(data.identifier.replace("//", ""))
+        .update({ views: data.views + 1, votes: data.votes + 1 });
+      setUpVote(true);
     }
   };
-
-  useEffect(() => {
-    setUpVote(false);
-  }, []);
 
   return (
     <>
@@ -69,11 +71,11 @@ const Reader = () => {
                   {data.views && (
                     <>
                       <span>
-                        <i className="bi-eye text-primary" /> 102
+                        <i className="bi-eye text-primary" /> {data.views}
                       </span>
 
                       <span title="Reputation">
-                        <i className="bi-hexagon text-primary" /> 2
+                        <i className="bi-hexagon text-primary" /> {data.votes}
                       </span>
                     </>
                   )}

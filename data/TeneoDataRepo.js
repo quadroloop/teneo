@@ -30,7 +30,7 @@ export const fetchTopFeed = () => {
     Feeds = feedList;
   }
 
-  Feeds = Feeds.sort((a, b) => b.votes - a.votes);
+  Feeds = Feeds.sort((a, b) => a.votes - b.votes);
 
   return Feeds;
 };

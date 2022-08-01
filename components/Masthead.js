@@ -1,9 +1,12 @@
 import { useContext } from "react";
+import { fetchTopFeed } from "../data/TeneoDataRepo";
 import { SelectFeedContext } from "./AppContext";
 import CTAButton from "./CTAButton";
 
 const Masthead = () => {
   const { selectFeedItem } = useContext(SelectFeedContext);
+
+  const topFeeds = fetchTopFeed();
 
   return (
     <>
@@ -23,105 +26,45 @@ const Masthead = () => {
                 </a>
               </div>
               <div className="main-cards">
-                <div className="main-card">
-                  <img
-                    src="https://images.pexels.com/photos/41162/moon-landing-apollo-11-nasa-buzz-aldrin-41162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                    className="item-image"
-                  />
-                  <div className="news-info">
-                    <span className="news-header-text">
-                      An age of new Space exploration
-                    </span>
-                    <small>
-                      This is the new age of space exploration. The dream of
-                      exploring
-                    </small>
+                {topFeeds &&
+                  topFeeds
+                    .sort((a, b) => b.votes - a.votes)
+                    .slice(0, 4)
+                    .map((feed) => {
+                      return (
+                        <div
+                          className="main-card"
+                          onClick={() => {
+                            selectFeedItem(feed);
+                          }}
+                        >
+                          <img
+                            src={feed.previewImage.address}
+                            className="item-image"
+                          />
+                          <div className="news-info">
+                            <span className="news-header-text">
+                              {feed.title}
+                            </span>
+                            <small>
+                              {feed.summary
+                                ? feed.summary.substring(0, 50)
+                                : `Ethereum NFT: ${feed.metadata.collection_name} - ${feed.metadata.token_id}`}
+                            </small>
 
-                    <div className="badges">
-                      <small>
-                        <i className="bi-eye text-info" /> 1,234
-                      </small>
-                      <small>
-                        <i className="bi-hexagon text-info" /> 42
-                      </small>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="main-card">
-                  <img
-                    src="https://images.pexels.com/photos/2694037/pexels-photo-2694037.jpeg"
-                    className="item-image"
-                  />
-                  <div className="news-info">
-                    <span className="news-header-text">
-                      The incredible photographs of the JWST
-                    </span>
-                    <small>
-                      With the help of the JWST we are seeing the cosmos like
-                      never be..
-                    </small>
-
-                    <div className="badges">
-                      <small>
-                        <i className="bi-eye text-info" /> 1,234
-                      </small>
-                      <small>
-                        <i className="bi-hexagon text-info" /> 301
-                      </small>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="main-card">
-                  <img
-                    src="https://images.pexels.com/photos/264146/pexels-photo-264146.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                    className="item-image"
-                  />
-                  <div className="news-info">
-                    <span className="news-header-text">
-                      War never changes. Conflicts rages on
-                    </span>
-                    <small>
-                      Centuries passed. And all the supposed lessons we had
-                      learned..
-                    </small>
-
-                    <div className="badges">
-                      <small>
-                        <i className="bi-eye text-info" /> 1,234
-                      </small>
-                      <small>
-                        <i className="bi-hexagon text-info" /> 301
-                      </small>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="main-card">
-                  <img
-                    src="https://images.pexels.com/photos/11834957/pexels-photo-11834957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                    className="item-image"
-                  />
-                  <div className="news-info">
-                    <span className="news-header-text">
-                      The fight against World Hunger
-                    </span>
-                    <small>
-                      With all the advancements we have world hunger continues
-                      to be a , ..
-                    </small>
-
-                    <div className="badges">
-                      <small>
-                        <i className="bi-eye text-info" /> 1,234
-                      </small>
-                      <small>
-                        <i className="bi-hexagon text-info" /> 301
-                      </small>
-                    </div>
-                  </div>
-                </div>
+                            <div className="badges">
+                              <small>
+                                <i className="bi-eye text-info" /> {feed.views}
+                              </small>
+                              <small>
+                                <i className="bi-hexagon text-info" />{" "}
+                                {feed.views}
+                              </small>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
               </div>
             </div>
           </div>

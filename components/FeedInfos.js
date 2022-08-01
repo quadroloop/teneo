@@ -86,7 +86,6 @@ const FeedInfos = () => {
                 className="searched-item"
                 title="Click to Search"
                 onClick={() => {
-                  console.log(search.query);
                   searchRSS3(search.query);
                 }}
               >
