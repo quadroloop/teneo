@@ -27,6 +27,12 @@
   align-items: center;
   column-gap: 20px;
 
+  @media (max-width: 1000px) {
+    padding: 20px 100px;
+    overflow: hidden;
+    overflow-x: auto;
+  }
+
   .metrics-card {
     display: flex;
     flex-direction: column;

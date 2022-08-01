@@ -7,6 +7,19 @@
     align-items: center;
     height: 40px;
   }
+
+  @media (max-width: 1000px) {
+    .logo {
+      position: relative;
+      top: -12px;
+    }
+
+    .container {
+      display: flex !important;
+      padding: 0 20px !important;
+      flex-direction: row !important;
+    }
+  }
 }
 
 .masthead-bg {
@@ -111,6 +124,15 @@
       transition: 0.3s;
     }
   }
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    row-gap: 20px;
+
+    .main-card {
+      width: 100%;
+    }
+  }
 }
 
 .footer-container {
@@ -129,6 +151,11 @@
   .rss3-logo {
     width: 120px;
   }
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    row-gap: 30px;
+  }
 }
 
 .search-bar {
@@ -140,6 +167,12 @@
   padding: 5px 15px;
   border-radius: 20px;
   margin-left: 10px;
+
+  @media (max-width: 1000px) {
+    position: relative;
+    top: -7px;
+    width: 80%;
+  }
 }
 
 .section-fold {

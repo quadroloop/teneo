@@ -26,11 +26,9 @@ const MainFeed = () => {
         <div className="main-feed container">
           <div className="feed-items">
             {feedData &&
-              feedData
-                .filter((x) => x.tags.includes("NFT"))
-                .map((item) => {
-                  return <FeedCard data={item} />;
-                })}
+              feedData.map((item) => {
+                return <FeedCard data={item} />;
+              })}
 
             {feedData === null && <FeedSkeleton />}
 

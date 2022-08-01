@@ -13,9 +13,9 @@ const Masthead = () => {
             <div className="mb-5 mb-lg-0 text-center text-lg-start">
               <div className="mast-header">
                 <div className="header-info">
-                  <h2 className="display-6 lh-1 mb-3">Top Stories</h2>
+                  <h2 className="display-6 lh-1 mb-3">Top Feed</h2>
                   <p className="fw-normal text-muted mb-5">
-                    Most popular stories curated just for you.
+                    Most popular feeds from RSS3, selected by the community.
                   </p>
                 </div>
                 <a href="#feed">
@@ -33,8 +33,8 @@ const Masthead = () => {
                       An age of new Space exploration
                     </span>
                     <small>
-                      This is an text some text boi this is some lorem isum
-                      stuff
+                      This is the new age of space exploration. The dream of
+                      exploring
                     </small>
 
                     <div className="badges">
@@ -55,11 +55,11 @@ const Masthead = () => {
                   />
                   <div className="news-info">
                     <span className="news-header-text">
-                      An age of new Space exploration
+                      The incredible photographs of the JWST
                     </span>
                     <small>
-                      This is an text some text boi this is some lorem isum
-                      stuff this is cool..
+                      With the help of the JWST we are seeing the cosmos like
+                      never be..
                     </small>
 
                     <div className="badges">
@@ -79,8 +79,22 @@ const Masthead = () => {
                     className="item-image"
                   />
                   <div className="news-info">
-                    <span>An age of new Space exploration</span>
-                    <small>This is an text some text boi</small>
+                    <span className="news-header-text">
+                      War never changes. Conflicts rages on
+                    </span>
+                    <small>
+                      Centuries passed. And all the supposed lessons we had
+                      learned..
+                    </small>
+
+                    <div className="badges">
+                      <small>
+                        <i className="bi-eye text-info" /> 1,234
+                      </small>
+                      <small>
+                        <i className="bi-hexagon text-info" /> 301
+                      </small>
+                    </div>
                   </div>
                 </div>
 
@@ -90,8 +104,22 @@ const Masthead = () => {
                     className="item-image"
                   />
                   <div className="news-info">
-                    <span>An age of new Space exploration</span>
-                    <small>This is an text some text boi</small>
+                    <span className="news-header-text">
+                      The fight against World Hunger
+                    </span>
+                    <small>
+                      With all the advancements we have world hunger continues
+                      to be a , ..
+                    </small>
+
+                    <div className="badges">
+                      <small>
+                        <i className="bi-eye text-info" /> 1,234
+                      </small>
+                      <small>
+                        <i className="bi-hexagon text-info" /> 301
+                      </small>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -43,6 +43,7 @@ const FeedCard = (props) => {
   if (tags[0] === "Token") {
     title = "Token Transfer";
     summary = `Transfered ${metadata.amount} ${metadata.token_symbol} (${metadata.token_standard}) in the ${metadata.network} Network.`;
+    previewImage.address = `https://avatars.dicebear.com/api/jdenticon/${metadata.transaction_hash}.svg`;
     propOverides = {
       title: title,
       summary: summary,
@@ -51,7 +52,8 @@ const FeedCard = (props) => {
 
   if (tags[0] === "ETH") {
     title = "Native Token Transfer";
-    summary = `Transfered ${metadata.amount} ${metadata.token_symbol} (${metadata.token_standard}) in the ${metadata.network} Network.`;
+    summary = `Transfered ${metadata.amount} ${metadata.token_symbol} (${metadata.token_standard}) Native Token in the ${metadata.network} Network.`;
+    previewImage.address = `https://avatars.dicebear.com/api/jdenticon/${metadata.transaction_hash}.svg`;
     propOverides = {
       title: title,
       summary: summary,

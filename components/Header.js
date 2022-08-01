@@ -4,10 +4,10 @@ import Logo from "./Logo";
 import axios from "axios";
 import { db } from "../firebase/firebaseClient";
 import { fetchTopSearches } from "../data/TeneoDataRepo";
-import { increment } from "firebase/firestore";
 
 const Header = () => {
   const { setFeedData } = useContext(FeedDataContext);
+
   const topSearches = fetchTopSearches();
 
   const searchRSS3 = async (query) => {
@@ -63,18 +63,7 @@ const Header = () => {
             }
           }}
         ></input>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarResponsive"
-          aria-controls="navbarResponsive"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          Menu
-          <i className="bi-list" />
-        </button>
+
         <div className="collapse navbar-collapse" id="navbarResponsive">
           <ul className="navbar-nav ms-auto me-4 my-3 my-lg-0">
             <li className="nav-item">
@@ -88,17 +77,14 @@ const Header = () => {
               </a>
             </li>
           </ul>
-          <button className="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0">
-            <span className="d-flex align-items-center">
-              <i className="bi-chat-text-fill me-2" />
-              <span className="small">Connect via Metamask</span>
-            </span>
-          </button>
-
-          {/* <img
-            src="https://avatars.dicebear.com/api/jdenticon/brycenarcisocenizamercines.svg"
-            className="avatar"
-          /> */}
+          <a href="https://rss3.io/about" target="_blank">
+            <button className="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0">
+              <span className="d-flex align-items-center">
+                <i className="bi-hexagon me-2" />
+                <span className="small">Powered by RSS3</span>
+              </span>
+            </button>
+          </a>
         </div>
       </div>
     </nav>

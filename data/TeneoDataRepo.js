@@ -17,3 +17,20 @@ export const fetchTopSearches = () => {
 
   return Searches;
 };
+
+export const fetchTopFeed = () => {
+  let Feeds = [];
+  const [topData, topDataLoading] = useCollection(
+    db.collection("top-feeds"),
+    {}
+  );
+
+  if (!topDataLoading && topData) {
+    let feedList = topData.docs.map((doc) => doc.data());
+    Feeds = feedList;
+  }
+
+  Feeds = Feeds.sort((a, b) => b.votes - a.votes);
+
+  return Feeds;
+};

@@ -1,7 +1,47 @@
+import { useContext } from "react";
 import { fetchTopSearches } from "../data/TeneoDataRepo";
+import axios from "axios";
+import { FeedDataContext } from "./AppContext";
+import { db } from "../firebase/firebaseClient";
 
 const FeedInfos = () => {
   const topSearches = fetchTopSearches();
+  const { setFeedData } = useContext(FeedDataContext);
+
+  const searchRSS3 = async (query) => {
+    if (query.trim() !== "") {
+      setFeedData(null);
+
+      axios
+        .get(
+          `https://pregod.rss3.dev/v0.4.0/account:${query}@ethereum/notes?limit=1000&exclude_tags=POAP&latest=false`
+        )
+        .then(async (res) => {
+          setFeedData(res.data.list);
+
+          if (res.data.list.length > 0) {
+            let searchInstance = topSearches.find((x) => x.query === query);
+            // save to top searches
+            if (!searchInstance) {
+              await db.collection("top-searches").doc(query).set({
+                query: query,
+                count: 1,
+              });
+            } else {
+              await db
+                .collection("top-searches")
+                .doc(query)
+                .update({
+                  count: searchInstance.count + 1,
+                });
+            }
+          }
+        })
+        .catch(() => {
+          setFeedData([]);
+        });
+    }
+  };
 
   return (
     <div className="feed-infos">
@@ -42,14 +82,21 @@ const FeedInfos = () => {
           .sort((a, b) => b.count - a.count)
           .map((search) => {
             return (
-              <div className="searched-item">
+              <div
+                className="searched-item"
+                title="Click to Search"
+                onClick={() => {
+                  console.log(search.query);
+                  searchRSS3(search.query);
+                }}
+              >
                 <img
                   src={`https://avatars.dicebear.com/api/jdenticon/${search.query}.svg`}
                   className="avatar"
                 />
 
                 <div className="search-info">
-                  <span>{search.query}</span>
+                  <span>{search.query.substring(0, 30)}..</span>
                   <small>
                     <i className="bi-search"></i> {search.count} searches
                   </small>

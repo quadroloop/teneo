@@ -99,6 +99,19 @@
         transition: 0.3s;
       }
     }
+
+    @media (max-width: 1000px) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: masonry;
+
+      .feed-card {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 1000px) {
+    flex-direction: column-reverse;
   }
 }
 
@@ -153,6 +166,13 @@
       }
     }
   }
+
+  @media (max-width: 1000px) {
+    position: unset;
+    top: unset;
+    margin-bottom: 250px;
+    width: 100%;
+  }
 }
 
 // top searches
@@ -161,13 +181,14 @@
   display: flex;
   padding: 10px;
   flex-direction: column;
-  width: 100%;
+  width: auto;
 
   .searched-item {
     padding: 10px 0;
     border-bottom: 0.3px solid #ddd;
-    width: 100%;
+    width: fit-content;
     display: flex;
+    transition: 0.3s;
 
     .search-info {
       display: flex;
@@ -176,6 +197,12 @@
       span {
         font-weight: 700;
       }
+    }
+
+    &:hover {
+      cursor: pointer;
+      background: rgba(221, 221, 221, 0.466);
+      transition: 0.3s;
     }
   }
 }
