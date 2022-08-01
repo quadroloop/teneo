@@ -10,7 +10,7 @@ const FeedCard = (props) => {
 
   const selectItem = (item) => {
     selectFeedItem(item);
-    console.log(item);
+    // console.log(item);
   };
 
   let propOverides = {};

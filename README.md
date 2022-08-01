@@ -1,6 +1,6 @@
 # Teneo
 
-> Teneo is a News and Wiki Decentralized Application.
+> Teneo is a News & RSS3 DApp Platform
 
 ### Project Description
 
