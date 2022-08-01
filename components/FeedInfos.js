@@ -1,13 +1,14 @@
 import { useContext } from "react";
 import { fetchTopFeed, fetchTopSearches } from "../data/TeneoDataRepo";
 import axios from "axios";
-import { FeedDataContext } from "./AppContext";
+import { FeedDataContext, SelectFeedContext } from "./AppContext";
 import { db } from "../firebase/firebaseClient";
 
 const FeedInfos = () => {
   const topSearches = fetchTopSearches();
   const topFeeds = fetchTopFeed();
   const { setFeedData } = useContext(FeedDataContext);
+  const { selectFeedItem } = useContext(SelectFeedContext);
 
   const searchRSS3 = async (query) => {
     if (query.trim() !== "") {
@@ -56,7 +57,12 @@ const FeedInfos = () => {
             .slice(0, 3)
             .map((tp) => {
               return (
-                <div className="media-item">
+                <div
+                  className="media-item"
+                  onClick={() => {
+                    selectFeedItem(tp);
+                  }}
+                >
                   <img src={tp.previewImage.address} />
                   <div className="media-info">
                     <span>
