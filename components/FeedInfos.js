@@ -1,11 +1,12 @@
 import { useContext } from "react";
-import { fetchTopSearches } from "../data/TeneoDataRepo";
+import { fetchTopFeed, fetchTopSearches } from "../data/TeneoDataRepo";
 import axios from "axios";
 import { FeedDataContext } from "./AppContext";
 import { db } from "../firebase/firebaseClient";
 
 const FeedInfos = () => {
   const topSearches = fetchTopSearches();
+  const topFeeds = fetchTopFeed();
   const { setFeedData } = useContext(FeedDataContext);
 
   const searchRSS3 = async (query) => {
@@ -49,32 +50,22 @@ const FeedInfos = () => {
         <i className="bi-circle-fill text-info" /> Popular Feeds
       </p>
       <div className="media-grid">
-        <div className="media-item">
-          <img src="https://images.pexels.com/photos/2694037/pexels-photo-2694037.jpeg" />
-          <div className="media-info">
-            <span>
-              <i className="bi-eye text-info" /> 1.2K
-            </span>
-          </div>
-        </div>
-
-        <div className="media-item">
-          <img src="https://images.pexels.com/photos/2873669/pexels-photo-2873669.jpeg?cs=srgb&dl=pexels-guillaume-meurice-2873669.jpg&fm=jpg" />
-          <div className="media-info">
-            <span>
-              <i className="bi-eye text-info" /> 2.2K
-            </span>
-          </div>
-        </div>
-
-        <div className="media-item">
-          <img src="https://images.pexels.com/photos/41162/moon-landing-apollo-11-nasa-buzz-aldrin-41162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
-          <div className="media-info">
-            <span>
-              <i className="bi-eye text-info" /> 32K
-            </span>
-          </div>
-        </div>
+        {topFeeds &&
+          topFeeds
+            .sort((a, b) => b.votes - a.votes)
+            .slice(0, 3)
+            .map((tp) => {
+              return (
+                <div className="media-item">
+                  <img src={tp.previewImage.address} />
+                  <div className="media-info">
+                    <span>
+                      <i className="bi-hexagon text-info" /> {tp.views}
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
       </div>
 
       <div className="top-searches">

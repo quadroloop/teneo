@@ -108,7 +108,7 @@ const Reader = () => {
                     ) : (
                       <i className="bi-hexagon"></i>
                     )}{" "}
-                    (0) Upvote
+                    ({data.votes ? data.votes : 0}) Upvote
                   </span>
                 </button>
 
