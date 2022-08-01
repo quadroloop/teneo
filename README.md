@@ -4,7 +4,9 @@
 
 ### Project Description
 
-The Goal of the project is to use RSS3 and create a Web application where users can search the Blockchain Address and explore the RSS Feeds attach to them
+The goal of the project is to use RSS3 and create an intuitive Web application where users can search the Blockchain Addresses and explore the RSS Feeds from them.
+
+The project is built on top of the `RSS3 PreGod API` with additional features to upvote useful feeds for others to see.
 
 ### Features:
 
@@ -18,7 +20,20 @@ The Goal of the project is to use RSS3 and create a Web application where users 
 
 Try the [Live Demo](https://teneo.vercel.app)
 
-### Getting Started
+### Development: Getting Started
+
+#### Setting up ENV
+
+This project is using Firebase as a prototype database so, you need to create a firebase project and create a `.env` file with the following values.
+
+```txt
+NEXT_PUBLIC_FIREBASE_API_KEY=
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
+NEXT_PUBLIC_FIREBASE_APP_ID=
+```
 
 > The project frontend is built using NextJS
 > First, run the development server:
