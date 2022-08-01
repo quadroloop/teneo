@@ -20,6 +20,16 @@ The project is built on top of the `RSS3 PreGod API` with additional features to
 
 Try the [Live Demo](https://teneo.vercel.app)
 
+### Demo Video & Presentation:
+
+> Watch the demo video and presentaion here:
+> https://youtu.be/ktUM3TMEEms
+
+### Links to usage of RSS3 in the project
+
+- https://github.com/quadroloop/teneo/blob/main/data/RSS3PregodRepo.js
+- https://github.com/quadroloop/teneo/blob/main/components/Header.js
+
 ### Development: Getting Started
 
 #### Setting up ENV
