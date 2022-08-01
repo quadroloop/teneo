@@ -2,6 +2,8 @@
 
 > Teneo is a News & RSS3 DApp Platform
 
+![Project Banner Image](teneo-banner.png)
+
 ### Project Description
 
 The goal of the project is to use RSS3 and create an intuitive Web application where users can search the Blockchain Addresses and explore the RSS Feeds from them.
